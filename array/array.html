@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Array</title>
+   
+   <script defer>
+      //배열에 사용할 수 있는 자료형
+      // 1.일반 자료형 (숫자,문자,부리언)
+      // 2.객체 자료형(함수,객체,배열)
+      //배열에 사용할 수 있는 요소는 모든 자료형이다.
+      const numbers = [1, 2, 3, 4, 5]; //배열은 []로 표시한다.
+
+      console.log(numbers);
+      //배열 요소 갯수 확인
+      console.log(numbers.length);
+
+      //배열 요소 접근
+      console.log(numbers[0]);
+      for(let i =0; i < numbers.length; i++){
+         console.log(numbers[i]);
+      }
+
+      //배열 요소 추가
+      numbers.push(100);
+      console.log(numbers);
+      //numbers[6] = 200;
+      console.log(numbers);
+      numbers[10] = 200;
+      console.log(numbers);
+
+      //특정 위치에 배열 추가: array.splice(index, delete, add);
+      const strings = ["a", "b", "c", "d", "e"];
+      strings.splice(1,1);  //1번째 있는 요소 1개를 없애주는것 (index, delete) 두개쓰면 삭제
+      console.log(strings);
+      //index번째, delete만큼 삭제하고, add를 추가
+      strings.splice(1, 0, "x"); //인덱스1번째 1개를 없애주고 대신에 x를 추가해주는 것
+      console.log(strings);
+
+
+      //map 메서드 : 배열에 있는 모든 요소에 특정 기능을 실행 시키는 메서드
+      //feach_array
+
+      // let numbersSqrt = numbers.map(function(x){
+      //    return x * x; //같은 값을 곱해줌
+      // });
+
+      let numbersSqrt = numbers.map((x) => x*x);
+      
+      //화살표함수 방식 위에랑 같은 값이 나옴. 
+     
+      console.log(numbersSqrt);
+
+      //화살표 함수의 예
+      //1. 선언적 함수 (함수에 이름이 있음)
+      // function sumNum(a, b){
+      //    return a + b;
+      // }
+
+
+      //2. 익명 함수 (함수에 이름 없고 기능만 있어서 기능저장)
+      // let sumNum =  function (a, b){
+      //    return a + b;
+      // };
+
+      //3. 화살표 함수 
+      // 여러줄의 정의 코드를 쓸 경우 잘 사용하지 않는다.
+      let sumNum = (a, b) => {return a + b}; //화살표함수의 가장 큰 장점은 간편하게 쓰는 이유 (한줄로 씀)
+      console.log(sumNum(5, 7));
+
+      
+      
+
+   </script>
+</head>
+<body></body>
+</html>
